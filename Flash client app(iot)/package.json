@@ -1,0 +1,21 @@
+{
+    "name": "org.apache.cordova.iot",
+    "version": "1.0.0",
+    "displayName": "IOT",
+    "cordova": {
+        "platforms": [
+            "android"
+        ],
+        "plugins": {
+            "cordova-plugin-device": {},
+            "cordova-plugin-media": {},
+            "cordova-plugin-whitelist": {}
+        }
+    },
+    "dependencies": {
+        "cordova-android": "~6.0.0",
+        "cordova-plugin-device": "~1.1.5",
+        "cordova-plugin-media": "~2.4.1",
+        "cordova-plugin-whitelist": "1"
+    }
+}

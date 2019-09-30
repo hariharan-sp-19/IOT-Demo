@@ -1,0 +1,34 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "com-badrit-macaddress": {
+            "PACKAGE_NAME": "org.apache.cordova.iot"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "org.apache.cordova.iot"
+        },
+        "cordova-plugin-flashlight": {
+            "PACKAGE_NAME": "org.apache.cordova.iot"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "org.apache.cordova.iot"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "org.apache.cordova.iot"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "org.apache.cordova.iot"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "org.apache.cordova.iot"
+        }
+    }
+}

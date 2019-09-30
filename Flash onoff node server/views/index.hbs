@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IOT</title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css">
+	<script src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript">
+		
+			var socket = io('http://34.205.92.204:8000');
+        socket.on('connect', function () {
+          alert('connected');
+         });
+        function on(){
+        	socket.emit('onweb','on');
+        }
+        function off(){
+        	socket.emit('offweb','off');
+        }
+        function play(){
+        	socket.emit('playweb','play');
+        }		
+	</script>
+</head>
+<body>
+<br>
+<div class="container">
+<h2>Simple iot demo</h2>
+<center>
+	<button class="btn btn-primary" onclick="on()">ON</button>
+	<button class="btn btn-primary" onclick="off()">OFF</button>
+	<button class="btn btn-primary" onclick="play()">Alert</button>
+</center>
+</div>
+</body>
+</html>

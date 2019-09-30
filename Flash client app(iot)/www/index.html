@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IOT</title>
+   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <script type="text/javascript" src="js/socket.js"></script>
+<script>
+ function onLoad() {
+       onDeviceReady();  
+}  
+var socket;
+function onDeviceReady() {
+    socket  = io.connect('http://34.205.92.204:8000');
+socket.on('connect',function(){
+	document.getElementById('value').innerHTML = 'Connected';
+});
+socket.on('on',function(msg){
+ flash();
+});
+socket.on('off',function(msg){
+ off();
+});
+socket.on('Disconnect',function(){
+document.getElementById('value').innerHTML = 'Connect...';
+});
+}
+
+function flash(){
+	window.plugins.flashlight.available(function(isAvailable) {
+  if (isAvailable) {
+
+    // switch on
+    window.plugins.flashlight.switchOn(); 
+
+  } else {
+    alert("Flashlight not available on this device");
+  }
+});
+}
+
+function off(){
+	window.plugins.flashlight.available(function(isAvailable) {
+  if (isAvailable) {
+      window.plugins.flashlight.switchOff(); // success/error callbacks may be passed
+  } else {
+    alert("Flashlight not available on this device");
+  }
+});
+}
+//android_asset/www/
+var media;
+function play(){
+  alert('yay');
+  media = new Media("/android_asset/www/Sound.mp3", function() {
+            alert("playAudio():Audio Success");
+        },
+            function(err) {
+                alert(JSON.stringify(err));
+                alert('error');
+        }
+);
+  alert('yayi');
+   //media.setVolume('1.0');
+   media.play();
+}
+
+function getMediaURL(s) {
+    if(device.platform.toLowerCase() === "android") return "/android_asset/www/" + s;
+    return s;
+}
+  </script>
+</head>
+<body onload="onLoad()">
+<br>
+<br>
+<div class="container jumbotron text-center">
+<h3 id="value">Connecting....</h3>
+<audio src="Sound.mp3" type="audio/mpeg"></audio>
+<!--<button class="btn btn-primary" onclick="play()">play</button>-->
+</div>
+<script type="text/javascript" src="cordova.js"></script>
+</body>
+</html>

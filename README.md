@@ -1,6 +1,6 @@
 # IOT-Demo - https://www.youtube.com/watch?v=HiWBoceVK5Y
   * The Application basically explains IOT using a simple setup
-  * An Android App will communicate with the NodeJs server using socket.io to turn on/off the flashlight of the mobile device
+  * The NodeJs server will communicate with an Android app  using socket.io to turn on/off the flashlight of the mobile device
   * The Server is developed using NodeJs and the Android app is developed using Cordova 
 
 # To Run Application
